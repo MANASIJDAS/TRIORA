@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD>
+<META CHARSET="UTF-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<TITLE>
+    GAME PAGE
+</TITLE>
+<LINK rel="stylesheet" href="GamePageDesign.css">
+</HEAD>
+<BODY>
+    <H1 class="a1">THE BATTLE FIELD!</H1>
+    
+<DIV CLASS="BOX-CONTAINER">
+<DIV CLASS="OPTIONS">
+<IMG src="Stone_BG_Remove.jpg" class="OPTION" alt="STONE" data-choice="stone">
+    <IMG src="Paper_BG_Remove.jpg" class="OPTION" alt="Paper" data-choice="paper">
+        <IMG src="Scissor_BG_Remove.jpg" class="OPTION" alt="Scissor" data-choice="scissor">
+    </DIV></DIV>
+
+ <DIV CLASS="COUNTDOWN" ID="COUNTDOWN"></DIV>
+<DIV CLASS="RESULT" ID="RESULT"></DIV>
+
+    <DIV STYLE="display : flex; gap:30px; align-items : center; margin : 20px 0;">
+    <DIV CLASS="SCOREBOX1"><DIV CLASS="LABEL1">USER (YOU)</DIV><DIV CLASS="SCORE1"><DIV ID="US"></DIV></DIV></DIV>
+    <H2 CLASS="a2" STYLE="MARGIN:0;">VS</H2>
+    <DIV CLASS="SCOREBOX2"><DIV CLASS="LABEL2">COMPUTER</DIV><DIV CLASS="SCORE2"><DIV ID="CS"></DIV></DIV></DIV>    
+    </DIV>
+   
+<BUTTON class="btn1" autofocus onclick="window.location.href='Menu.html'">QUIT</BUTTON>
+    <FOOTER>© MANASIJ DAS - 2025</FOOTER>
+    <SCRIPT src="GamePage.js"></SCRIPT>
+    </BODY>
+    </HTML>

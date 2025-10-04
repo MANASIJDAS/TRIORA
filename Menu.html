@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD>
+<META CHARSET="UTF-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<TITLE>
+    MENU PAGE
+</TITLE>
+<STYLE>
+body
+{
+    margin : 0;
+    padding : 0;
+    height : 100vh;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    font-family : "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align : center;
+    background : linear-gradient(90deg, #141e30,#243b55,#42275a,#734b6d);
+    background-size : 400% 400%;
+    animation : gradientBG 12s ease infinite;
+    color : white;
+    }
+    @keyframes gradientBG
+    {
+        0% {background-position : 0% 50%;}
+        50% {background-position : 100% 50%;}
+        100% {background-position : 0% 50%;}
+    }
+    h1
+    {
+        font-size : 2rem;
+        margin-bottom : 20px;
+    }
+    .btn1{
+padding : 12px 24px;
+font-size : 1rem;
+font-weight : bold;
+border : none;
+border-radius : 20px;
+margin-bottom : 5px;
+background : #27ae60;
+color : white;
+cursor : pointer;
+transition : 0.3s ease;
+}
+.btn2{
+padding : 12px 24px;
+font-size : 1rem;
+font-weight : bold;
+border : none;
+border-radius : 20px;
+margin-top : 5px;
+background : #e74c3c;
+color : white;
+cursor : pointer;
+transition : 0.3s ease;
+}
+.btn1:hover
+{
+transform:scale(1.1);
+color : #27ae60;
+background : white;
+}
+.btn2:hover
+{
+transform:scale(1.1);
+color : #e74c3c;
+background : white;
+}
+    footer
+    {
+        position : absolute;
+        bottom : 10px;
+        font-size : 0.9rem;
+        color : rgba(255,255,255,0.9);
+    }
+</STYLE>
+</HEAD>
+<BODY>
+<H1>TRY YOUR LUCK AT TRIORA!</H1>
+<BUTTON class="btn1" onclick="window.location.href='Set_Match_Point.html'" autofocus><H3>PLAY A NEW GAME!</H3></BUTTON>
+<BUTTON class="btn2" onclick="window.location.href='Welcome_Page.html'" autofocus>LOGOUT</BUTTON>
+<FOOTER>© MANASIJ DAS - 2025</FOOTER>
+</BODY>
+</HTML>
