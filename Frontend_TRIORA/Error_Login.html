@@ -6,63 +6,10 @@
 <TITLE>
     ERROR LOGIN PAGE
 </TITLE>
-<STYLE>
-body
-{
-    margin : 0;
-    padding : 0;
-    height : 100vh;
-    display : flex;
-    flex-direction : column;
-    justify-content : center;
-    align-items : center;
-    font-family : "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    text-align : center;
-    background : linear-gradient(45deg, #696969, #36454F,#242124, Black);
-    background-size : 400% 400%;
-    animation : gradientBG 12s ease infinite;
-    color : white;
-    }
-    @keyframes gradientBG
-    {
-        0% {background-position : 0% 50%;}
-        50% {background-position : 100% 50%;}
-        100% {background-position : 0% 50%;}
-    }
-    h1
-    {
-        font-size : 2rem;
-        margin-bottom : 20px;
-    }
-    button
-    {
-        padding : 12px 24px;
-        font-size : 1rem;
-        font-weight : bold;
-        border : none;
-        border-radius : 20px;
-        background : white;
-        color : #696969;
-        cursor : pointer;
-        transition : 0.3s ease;
-    }
-    button:hover
-    {
-        transform:scale(1.1);
-        color : white;
-        background : #696969;
-    }
-    footer
-    {
-        position : absolute;
-        bottom : 10px;
-        font-size : 0.9rem;
-        color : rgba(255,255,255,0.9);
-    }
-</STYLE>
+<LINK rel="stylesheet" href="Error_Login.css">
 </HEAD>
 <BODY>
-<H1>OOPS! There was an issue logging you in.</H1>
+<H1>OOPS! INVALID CREDENTIALS. THERE WAS AN ISSUE LOGGING YOU IN.</H1>
 <BUTTON onclick="window.location.href='Welcome_Page.html'" autofocus>GO BACK</BUTTON>
 <FOOTER>© MANASIJ DAS - 2025</FOOTER>
 </BODY>

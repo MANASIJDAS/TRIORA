@@ -1,0 +1,12 @@
+# Backend dependencies
+Backend_TRIORA/node_modules/
+
+# Environment variables
+Backend_TRIORA/.env
+
+# Optional: logs
+Backend_TRIORA/*.log
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+{
+  "name": "triora",
+  "version": "1.0.0",
+  "description": "Rock, Paper, Scissor Game",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MANASIJDAS/TRIORA.git"
+  },
+  "author": "Manasij",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MANASIJDAS/TRIORA/issues"
+  },
+  "homepage": "https://github.com/MANASIJDAS/TRIORA#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.0",
+    "nodemon": "^3.1.10"
+  }
+}
