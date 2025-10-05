@@ -1,4 +1,4 @@
-const taglines = ["Developed by MANASIJ DAS.","The Ultimate Hand Battle.","Simple Game, Epic Clash.","Your Chance to Rule the Arena."];
+const taglines = ["Developed by MANASIJ DAS.","The Ultimate Hand Battle.","Simple Game, Epic Clash.","Your Chance to Win."];
 const taglineElement = document.getElementById("tagline");
 let taglineIndex=0;
 let charIndex=0;
