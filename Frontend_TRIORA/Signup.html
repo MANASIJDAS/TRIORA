@@ -4,69 +4,66 @@
 <META CHARSET="UTF-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
 <TITLE>
-    SIGNUP PAGE
+	SIGNUP PAGE
 </TITLE>
 <LINK rel="stylesheet" href="Signup.css">
 </HEAD>
 <BODY>
-    <H1 class="a1">WELCOME, USER!</H1><H1 CLASS="a2">CREATE YOUR TRIORA ACCOUNT TO GET STARTED!</H1>
-    <DIV>
-    <INPUT required ID="FN" type="text" class="inputa" placeholder="ENTER YOUR FIRST NAME."/>    
-    </DIV>
-    <DIV>
-    <INPUT ID="MN" type="text" class="inputb" placeholder="ENTER YOUR MIDDLE NAME."/>    
-    </DIV>
-    <DIV>
-    <INPUT ID="LN" type="text" class="inputc" placeholder="ENTER YOUR LAST NAME."/>    
-    </DIV>
-    <DIV>
-    <INPUT required ID="EM" type="email" class="inputd" placeholder="ENTER YOUR EMAIL ID."/>    
-    </DIV>
-    <DIV>
-    <INPUT required ID="PW" type="password" class="inputd" placeholder="SET A STRONG PASSWORD."/>    
-    </DIV>
+	<H1 class="a1">WELCOME, USER!</H1><H1 CLASS="a2">CREATE YOUR TRIORA ACCOUNT TO GET STARTED!</H1>
+	<DIV>
+	<INPUT required ID="FN" type="text" class="inputa" placeholder="ENTER YOUR FIRST NAME."/>    
+	</DIV>
+	<DIV>
+	<INPUT ID="MN" type="text" class="inputb" placeholder="ENTER YOUR MIDDLE NAME."/>    
+	</DIV>
+	<DIV>
+	<INPUT ID="LN" type="text" class="inputc" placeholder="ENTER YOUR LAST NAME."/>    
+	</DIV>
+	<DIV>
+	<INPUT required ID="EM" type="email" class="inputd" placeholder="ENTER YOUR EMAIL ID."/>    
+	</DIV>
+	<DIV>
+	<INPUT required ID="PW" type="password" class="inputd" placeholder="SET A STRONG PASSWORD."/>    
+	</DIV>
 <BUTTON class="btn1" id="CONFIRM" autofocus>CONFIRM</BUTTON>
 <BUTTON class="btn2" onclick="window.location.href='Welcome_Page.html'" autofocus>GO BACK</BUTTON>
 <FOOTER>© MANASIJ DAS - 2025</FOOTER>
 <SCRIPT>
-
-
-    document.getElementById("CONFIRM").addEventListener("click", async () => {
-        const firstname = document.getElementById("FN").value.trim();
-        const middlename = document.getElementById("MN").value.trim();
-        const lastname = document.getElementById("LN").value.trim();
-        const email = document.getElementById("EM").value.trim();
-        const password = document.getElementById("PW").value.trim();
-        if (!firstname || !email || !password) {
-            alert("PLEASE ENTER AT LEAST FIRST NAME, EMAIL AND PASSWORD.");
-            return;
-        }
-        try {
-            const res = await fetch("https://triora-1.onrender.com/user/signup", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    firstname: firstname,
-                    middlename: middlename,
-                    lastname: lastname,
-                    email: email,
-                    password: password
-                })
-            });
-            const data = await res.json();
-            if (res.status === 201) {
-                alert(data.message);
-                console.log(data);
-                window.location.href = "Login.html";
-            } else {
-                alert(data.message || "Signup failed. Please try again.");
-            }
-        } catch (error) {
-            console.error("Error : ", error);
-            alert("OOPS! UNFORTUNATELY SOMETHING WENT WRONG WHILE CONNECTING TO THE SERVER.");
-        }
-    });
-
+	document.getElementById("CONFIRM").addEventListener("click", async () => {
+		const firstname = document.getElementById("FN").value.trim();
+		const middlename = document.getElementById("MN").value.trim();
+		const lastname = document.getElementById("LN").value.trim();
+		const email = document.getElementById("EM").value.trim();
+		const password = document.getElementById("PW").value.trim();
+		if (!firstname || !email || !password) {
+			alert("PLEASE ENTER AT LEAST FIRST NAME, EMAIL AND PASSWORD.");
+			return;
+		}
+		try {
+			const res = await fetch("https://triora-1.onrender.com/user/signup", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					firstname: firstname,
+					middlename: middlename,
+					lastname: lastname,
+					email: email,
+					password: password
+				})
+			});
+			const data = await res.json();
+			if (res.status === 201) {
+				alert(data.message);
+				console.log(data);
+				window.location.href = "Login.html";
+			} else {
+				alert(data.message || "Signup failed. Please try again.");
+			}
+		} catch (error) {
+			console.error("Error : ", error);
+			alert("OOPS! UNFORTUNATELY SOMETHING WENT WRONG WHILE CONNECTING TO THE SERVER.");
+		}
+	});
 </SCRIPT>
 </BODY>
-    </HTML>
+	</HTML>
