@@ -30,39 +30,39 @@
 <FOOTER>© MANASIJ DAS - 2025</FOOTER>
 <SCRIPT>
 
-    document.getElementById("CONFIRM").addEventListener("click",async()=>{
-        const firstname=document.getElementById("FN").value.trim();
-        const middlename=document.getElementById("MN").value.trim();
-        const lastname=document.getElementById("LN").value.trim();
-        const email=document.getElementById("EM").value.trim();
-        const password=document.getElementById("PW").value.trim();
-        if(!firstname || !email || !password)
-    {
-        alert("PLEASE ENTER AT LEAST FIRST NAME, EMAIL AND PASSWORD.");
-        return;
-    }
-        try{
-            const res=await fetch("https://triora-1.onrender.com/user/signup")({
-                method:"POST",
-                headers:{"Content-Type":"application/json"},
-                body:JSON.stringify({
-                    firstname:firstname,
-                    middlename:middlename,
-                    lastname:lastname,
-                    email:email,
-                    password:password
+
+    document.getElementById("CONFIRM").addEventListener("click", async () => {
+        const firstname = document.getElementById("FN").value.trim();
+        const middlename = document.getElementById("MN").value.trim();
+        const lastname = document.getElementById("LN").value.trim();
+        const email = document.getElementById("EM").value.trim();
+        const password = document.getElementById("PW").value.trim();
+        if (!firstname || !email || !password) {
+            alert("PLEASE ENTER AT LEAST FIRST NAME, EMAIL AND PASSWORD.");
+            return;
+        }
+        try {
+            const res = await fetch("https://triora-1.onrender.com/user/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    firstname: firstname,
+                    middlename: middlename,
+                    lastname: lastname,
+                    email: email,
+                    password: password
                 })
             });
-            const data=await res.json();
-            if(res.status===201)
-            {
-            alert(data.message);
-            console.log(data);
-            window.location.href="Login.html";
+            const data = await res.json();
+            if (res.status === 201) {
+                alert(data.message);
+                console.log(data);
+                window.location.href = "Login.html";
+            } else {
+                alert(data.message || "Signup failed. Please try again.");
             }
-        }
-        catch(error){
-            console.error("Error : ",error);
+        } catch (error) {
+            console.error("Error : ", error);
             alert("OOPS! UNFORTUNATELY SOMETHING WENT WRONG WHILE CONNECTING TO THE SERVER.");
         }
     });

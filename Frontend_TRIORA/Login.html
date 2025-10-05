@@ -19,55 +19,41 @@
 <BUTTON class="btn1" id="checkemail" autofocus>AUTHENTICATE AND LOGIN</BUTTON>
     <FOOTER>© MANASIJ DAS - 2025</FOOTER>
     <SCRIPT>
-            const abc = document.getElementById("EM");
-const xyz = document.getElementById("checkemail");
-xyz.addEventListener("click", function () {
-  if (!abc.checkValidity()) {
-    alert("YOU ENTERED AN INVALID EMAIL ID. PLEASE ENTER A VALID EMAIL ID.");
-  } else {
-    alert("THE EMAIL ID ENTERED BY YOU IS " + abc.value);
-  }
-});
-            </SCRIPT>
-            <SCRIPT>
-
-    document.getElementById("checkemail").addEventListener("click",async()=>{
-        const email=document.getElementById("EM").value.trim();
-        const password=document.getElementById("PW").value.trim();
-        if(!email || !password)
-    {
-        alert("PLEASE ENTER AT LEAST EMAIL AND PASSWORD.");
-        return;
-    }
-        try{
-            const res=await fetch("http://localhost:4001/user/login",{
-                method:"POST",
-                headers:{"Content-Type":"application/json"},
-                body:JSON.stringify({
-                    email:email,
-                    password:password
+    document.getElementById("checkemail").addEventListener("click", async () => {
+        const email = document.getElementById("EM").value.trim();
+        const password = document.getElementById("PW").value.trim();
+        if (!email || !password) {
+            alert("PLEASE ENTER AT LEAST EMAIL AND PASSWORD.");
+            return;
+        }
+        if (!document.getElementById("EM").checkValidity()) {
+            alert("YOU ENTERED AN INVALID EMAIL ID. PLEASE ENTER A VALID EMAIL ID.");
+            return;
+        }
+        try {
+            const res = await fetch("https://triora-1.onrender.com/user/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
                 })
             });
-            const data=await res.json();
-            if(res.status===200)
-            {
-            alert(data.message);
-            console.log(data);
-            window.location.href="Menu.html";
+            const data = await res.json();
+            if (res.status === 200) {
+                alert(data.message);
+                console.log(data);
+                window.location.href = "Menu.html";
+            } else {
+                alert(data.message);
+                console.log(data);
+                window.location.href = "Error_Login.html";
             }
-            else
-            {
-            alert(data.message);
-            console.log(data);
-            window.location.href="Error_Login.html";
-            }
-        }
-        catch(error){
-            console.error("Error : ",error);
+        } catch (error) {
+            console.error("Error : ", error);
             alert("OOPS! THERE WAS AN UNEXPECTED ISSUE LOGGING YOU IN. PLEASE TRY AGAIN WITH VALID CREDENTIALS.");
         }
     });
-
-</SCRIPT>
+    </SCRIPT>
 </BODY>
     </HTML>
