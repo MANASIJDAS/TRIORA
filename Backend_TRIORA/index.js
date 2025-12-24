@@ -17,8 +17,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.options("*", cors());
-
 app.use(express.json());
 
 const PORT = process.env.PORT || 4000;
@@ -31,6 +29,7 @@ mongoose.connect(URI, {
 .then(() => console.log("Connected to MongoDB."))
 .catch((error) => console.log("MongoDB connection error:", error));
 
+
 app.use("/user", userRoute);
 
 const __filename = fileURLToPath(import.meta.url);
@@ -41,6 +40,7 @@ app.use(express.static(path.join(__dirname, "../Frontend_TRIORA")));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../Frontend_TRIORA/Welcome_Page.html"));
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
